@@ -1,0 +1,605 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5BCF424724D7FF8700C0E746 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF424624D7FF8700C0E746 /* AppDelegate.swift */; };
+		5BCF424924D7FF8700C0E746 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF424824D7FF8700C0E746 /* SceneDelegate.swift */; };
+		5BCF424B24D7FF8700C0E746 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF424A24D7FF8700C0E746 /* ViewController.swift */; };
+		5BCF424E24D7FF8700C0E746 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF424C24D7FF8700C0E746 /* Main.storyboard */; };
+		5BCF425024D7FF8900C0E746 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF424F24D7FF8900C0E746 /* Assets.xcassets */; };
+		5BCF425324D7FF8900C0E746 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF425124D7FF8900C0E746 /* LaunchScreen.storyboard */; };
+		5BCF425E24D7FF8A00C0E746 /* Handwritten_Japanese_Recognition_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF425D24D7FF8A00C0E746 /* Handwritten_Japanese_Recognition_AppTests.swift */; };
+		5BCF426924D7FF8A00C0E746 /* Handwritten_Japanese_Recognition_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF426824D7FF8A00C0E746 /* Handwritten_Japanese_Recognition_AppUITests.swift */; };
+		5BCF427724D8000600C0E746 /* Handwrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF427624D8000600C0E746 /* Handwrite.swift */; };
+		5BCF427924D8038400C0E746 /* hiragana.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF427824D8038400C0E746 /* hiragana.mlmodel */; };
+		5BCF427B24D8039000C0E746 /* katakana.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF427A24D8039000C0E746 /* katakana.mlmodel */; };
+		5BCF427D24D8039B00C0E746 /* kanji.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF427C24D8039B00C0E746 /* kanji.mlmodel */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5BCF425A24D7FF8A00C0E746 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BCF423B24D7FF8700C0E746 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BCF424224D7FF8700C0E746;
+			remoteInfo = "Handwritten Japanese Recognition App";
+		};
+		5BCF426524D7FF8A00C0E746 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BCF423B24D7FF8700C0E746 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BCF424224D7FF8700C0E746;
+			remoteInfo = "Handwritten Japanese Recognition App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5BCF424324D7FF8700C0E746 /* Handwritten Japanese Recognition App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Handwritten Japanese Recognition App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BCF424624D7FF8700C0E746 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5BCF424824D7FF8700C0E746 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5BCF424A24D7FF8700C0E746 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5BCF424D24D7FF8700C0E746 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5BCF424F24D7FF8900C0E746 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5BCF425224D7FF8900C0E746 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5BCF425424D7FF8900C0E746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BCF425924D7FF8A00C0E746 /* Handwritten Japanese Recognition AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Handwritten Japanese Recognition AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BCF425D24D7FF8A00C0E746 /* Handwritten_Japanese_Recognition_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handwritten_Japanese_Recognition_AppTests.swift; sourceTree = "<group>"; };
+		5BCF425F24D7FF8A00C0E746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BCF426424D7FF8A00C0E746 /* Handwritten Japanese Recognition AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Handwritten Japanese Recognition AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BCF426824D7FF8A00C0E746 /* Handwritten_Japanese_Recognition_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handwritten_Japanese_Recognition_AppUITests.swift; sourceTree = "<group>"; };
+		5BCF426A24D7FF8A00C0E746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BCF427624D8000600C0E746 /* Handwrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handwrite.swift; sourceTree = "<group>"; };
+		5BCF427824D8038400C0E746 /* hiragana.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = hiragana.mlmodel; sourceTree = "<group>"; };
+		5BCF427A24D8039000C0E746 /* katakana.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = katakana.mlmodel; sourceTree = "<group>"; };
+		5BCF427C24D8039B00C0E746 /* kanji.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = kanji.mlmodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5BCF424024D7FF8700C0E746 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BCF425624D7FF8A00C0E746 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BCF426124D7FF8A00C0E746 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5BCF423A24D7FF8700C0E746 = {
+			isa = PBXGroup;
+			children = (
+				5BCF424524D7FF8700C0E746 /* Handwritten Japanese Recognition App */,
+				5BCF425C24D7FF8A00C0E746 /* Handwritten Japanese Recognition AppTests */,
+				5BCF426724D7FF8A00C0E746 /* Handwritten Japanese Recognition AppUITests */,
+				5BCF424424D7FF8700C0E746 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5BCF424424D7FF8700C0E746 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5BCF424324D7FF8700C0E746 /* Handwritten Japanese Recognition App.app */,
+				5BCF425924D7FF8A00C0E746 /* Handwritten Japanese Recognition AppTests.xctest */,
+				5BCF426424D7FF8A00C0E746 /* Handwritten Japanese Recognition AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5BCF424524D7FF8700C0E746 /* Handwritten Japanese Recognition App */ = {
+			isa = PBXGroup;
+			children = (
+				5BCF424624D7FF8700C0E746 /* AppDelegate.swift */,
+				5BCF424824D7FF8700C0E746 /* SceneDelegate.swift */,
+				5BCF427824D8038400C0E746 /* hiragana.mlmodel */,
+				5BCF427A24D8039000C0E746 /* katakana.mlmodel */,
+				5BCF427C24D8039B00C0E746 /* kanji.mlmodel */,
+				5BCF427624D8000600C0E746 /* Handwrite.swift */,
+				5BCF424A24D7FF8700C0E746 /* ViewController.swift */,
+				5BCF424C24D7FF8700C0E746 /* Main.storyboard */,
+				5BCF424F24D7FF8900C0E746 /* Assets.xcassets */,
+				5BCF425124D7FF8900C0E746 /* LaunchScreen.storyboard */,
+				5BCF425424D7FF8900C0E746 /* Info.plist */,
+			);
+			path = "Handwritten Japanese Recognition App";
+			sourceTree = "<group>";
+		};
+		5BCF425C24D7FF8A00C0E746 /* Handwritten Japanese Recognition AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				5BCF425D24D7FF8A00C0E746 /* Handwritten_Japanese_Recognition_AppTests.swift */,
+				5BCF425F24D7FF8A00C0E746 /* Info.plist */,
+			);
+			path = "Handwritten Japanese Recognition AppTests";
+			sourceTree = "<group>";
+		};
+		5BCF426724D7FF8A00C0E746 /* Handwritten Japanese Recognition AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5BCF426824D7FF8A00C0E746 /* Handwritten_Japanese_Recognition_AppUITests.swift */,
+				5BCF426A24D7FF8A00C0E746 /* Info.plist */,
+			);
+			path = "Handwritten Japanese Recognition AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5BCF424224D7FF8700C0E746 /* Handwritten Japanese Recognition App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BCF426D24D7FF8A00C0E746 /* Build configuration list for PBXNativeTarget "Handwritten Japanese Recognition App" */;
+			buildPhases = (
+				5BCF423F24D7FF8700C0E746 /* Sources */,
+				5BCF424024D7FF8700C0E746 /* Frameworks */,
+				5BCF424124D7FF8700C0E746 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Handwritten Japanese Recognition App";
+			productName = "Handwritten Japanese Recognition App";
+			productReference = 5BCF424324D7FF8700C0E746 /* Handwritten Japanese Recognition App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5BCF425824D7FF8A00C0E746 /* Handwritten Japanese Recognition AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BCF427024D7FF8A00C0E746 /* Build configuration list for PBXNativeTarget "Handwritten Japanese Recognition AppTests" */;
+			buildPhases = (
+				5BCF425524D7FF8A00C0E746 /* Sources */,
+				5BCF425624D7FF8A00C0E746 /* Frameworks */,
+				5BCF425724D7FF8A00C0E746 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BCF425B24D7FF8A00C0E746 /* PBXTargetDependency */,
+			);
+			name = "Handwritten Japanese Recognition AppTests";
+			productName = "Handwritten Japanese Recognition AppTests";
+			productReference = 5BCF425924D7FF8A00C0E746 /* Handwritten Japanese Recognition AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5BCF426324D7FF8A00C0E746 /* Handwritten Japanese Recognition AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BCF427324D7FF8A00C0E746 /* Build configuration list for PBXNativeTarget "Handwritten Japanese Recognition AppUITests" */;
+			buildPhases = (
+				5BCF426024D7FF8A00C0E746 /* Sources */,
+				5BCF426124D7FF8A00C0E746 /* Frameworks */,
+				5BCF426224D7FF8A00C0E746 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BCF426624D7FF8A00C0E746 /* PBXTargetDependency */,
+			);
+			name = "Handwritten Japanese Recognition AppUITests";
+			productName = "Handwritten Japanese Recognition AppUITests";
+			productReference = 5BCF426424D7FF8A00C0E746 /* Handwritten Japanese Recognition AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5BCF423B24D7FF8700C0E746 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "Aiyu Kamate";
+				TargetAttributes = {
+					5BCF424224D7FF8700C0E746 = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					5BCF425824D7FF8A00C0E746 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = 5BCF424224D7FF8700C0E746;
+					};
+					5BCF426324D7FF8A00C0E746 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = 5BCF424224D7FF8700C0E746;
+					};
+				};
+			};
+			buildConfigurationList = 5BCF423E24D7FF8700C0E746 /* Build configuration list for PBXProject "Handwritten Japanese Recognition App" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5BCF423A24D7FF8700C0E746;
+			productRefGroup = 5BCF424424D7FF8700C0E746 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5BCF424224D7FF8700C0E746 /* Handwritten Japanese Recognition App */,
+				5BCF425824D7FF8A00C0E746 /* Handwritten Japanese Recognition AppTests */,
+				5BCF426324D7FF8A00C0E746 /* Handwritten Japanese Recognition AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5BCF424124D7FF8700C0E746 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BCF425324D7FF8900C0E746 /* LaunchScreen.storyboard in Resources */,
+				5BCF425024D7FF8900C0E746 /* Assets.xcassets in Resources */,
+				5BCF424E24D7FF8700C0E746 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BCF425724D7FF8A00C0E746 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BCF426224D7FF8A00C0E746 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5BCF423F24D7FF8700C0E746 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BCF427724D8000600C0E746 /* Handwrite.swift in Sources */,
+				5BCF424B24D7FF8700C0E746 /* ViewController.swift in Sources */,
+				5BCF427B24D8039000C0E746 /* katakana.mlmodel in Sources */,
+				5BCF424724D7FF8700C0E746 /* AppDelegate.swift in Sources */,
+				5BCF424924D7FF8700C0E746 /* SceneDelegate.swift in Sources */,
+				5BCF427924D8038400C0E746 /* hiragana.mlmodel in Sources */,
+				5BCF427D24D8039B00C0E746 /* kanji.mlmodel in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BCF425524D7FF8A00C0E746 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BCF425E24D7FF8A00C0E746 /* Handwritten_Japanese_Recognition_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BCF426024D7FF8A00C0E746 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BCF426924D7FF8A00C0E746 /* Handwritten_Japanese_Recognition_AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5BCF425B24D7FF8A00C0E746 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BCF424224D7FF8700C0E746 /* Handwritten Japanese Recognition App */;
+			targetProxy = 5BCF425A24D7FF8A00C0E746 /* PBXContainerItemProxy */;
+		};
+		5BCF426624D7FF8A00C0E746 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BCF424224D7FF8700C0E746 /* Handwritten Japanese Recognition App */;
+			targetProxy = 5BCF426524D7FF8A00C0E746 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5BCF424C24D7FF8700C0E746 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BCF424D24D7FF8700C0E746 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5BCF425124D7FF8900C0E746 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BCF425224D7FF8900C0E746 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5BCF426B24D7FF8A00C0E746 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5BCF426C24D7FF8A00C0E746 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5BCF426E24D7FF8A00C0E746 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Handwritten Japanese Recognition App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Japanese-Recognition.Handwritten-Japanese-Recognition-App";
+				PRODUCT_NAME = "Handwritten Japanese Recognition App";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5BCF426F24D7FF8A00C0E746 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Handwritten Japanese Recognition App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Japanese-Recognition.Handwritten-Japanese-Recognition-App";
+				PRODUCT_NAME = "Handwritten Japanese Recognition App";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5BCF427124D7FF8A00C0E746 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Handwritten Japanese Recognition AppTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Japanese-Recognition.Handwritten-Japanese-Recognition-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Handwritten Japanese Recognition App.app/Handwritten Japanese Recognition App";
+			};
+			name = Debug;
+		};
+		5BCF427224D7FF8A00C0E746 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Handwritten Japanese Recognition AppTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Japanese-Recognition.Handwritten-Japanese-Recognition-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Handwritten Japanese Recognition App.app/Handwritten Japanese Recognition App";
+			};
+			name = Release;
+		};
+		5BCF427424D7FF8A00C0E746 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Handwritten Japanese Recognition AppUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Japanese-Recognition.Handwritten-Japanese-Recognition-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Handwritten Japanese Recognition App";
+			};
+			name = Debug;
+		};
+		5BCF427524D7FF8A00C0E746 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Handwritten Japanese Recognition AppUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Japanese-Recognition.Handwritten-Japanese-Recognition-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Handwritten Japanese Recognition App";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5BCF423E24D7FF8700C0E746 /* Build configuration list for PBXProject "Handwritten Japanese Recognition App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BCF426B24D7FF8A00C0E746 /* Debug */,
+				5BCF426C24D7FF8A00C0E746 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BCF426D24D7FF8A00C0E746 /* Build configuration list for PBXNativeTarget "Handwritten Japanese Recognition App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BCF426E24D7FF8A00C0E746 /* Debug */,
+				5BCF426F24D7FF8A00C0E746 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BCF427024D7FF8A00C0E746 /* Build configuration list for PBXNativeTarget "Handwritten Japanese Recognition AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BCF427124D7FF8A00C0E746 /* Debug */,
+				5BCF427224D7FF8A00C0E746 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BCF427324D7FF8A00C0E746 /* Build configuration list for PBXNativeTarget "Handwritten Japanese Recognition AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BCF427424D7FF8A00C0E746 /* Debug */,
+				5BCF427524D7FF8A00C0E746 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5BCF423B24D7FF8700C0E746 /* Project object */;
+}
