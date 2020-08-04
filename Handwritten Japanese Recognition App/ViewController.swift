@@ -30,6 +30,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+       get {
+          return .portrait
+       }
+    }
+    
+    override open var shouldAutorotate: Bool {
+        return false
+    }
     
     func Classification(request:VNRequest, error:Error?){
         guard let result = request.results as? [VNClassificationObservation] else {print("no results"); return}
@@ -65,6 +75,7 @@ class ViewController: UIViewController {
         }
         
     }
+    
     @IBAction func clear(_ sender: Any) {
         handwrite.clear()
         par1 = ""
@@ -72,6 +83,7 @@ class ViewController: UIViewController {
         par3 = ""
         x = 0
     }
+    
     @IBAction func chooseA(_ sender: Any) {
         if (x == 1){
             finallabel.text = (finallabel.text ?? "") + par1
@@ -99,6 +111,15 @@ class ViewController: UIViewController {
             x = 0
         }
     }
+    
+    @IBAction func clearlabel(_ sender: Any) {
+        finallabel.text = ""
+        par1 = ""
+        par2 = ""
+        par3 = ""
+        x = 0
+    }
+    
     @IBAction func switchmode(_ sender: Any) {
         if (modenum == 0){
             modenum = 1
