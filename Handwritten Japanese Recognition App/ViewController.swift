@@ -26,9 +26,17 @@ class ViewController: UIViewController {
     var par2 = ""
     var par3 = ""
     
+    @IBOutlet weak var sbutton: UIButton!
+    @IBOutlet weak var cbutton: UIButton!
+    @IBOutlet weak var rbutton: UIButton!
+    @IBOutlet weak var button4: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        sbutton.decorate(colors: UIColor.green)
+        cbutton.decorate(colors: UIColor.systemTeal)
+        rbutton.decorate(colors: UIColor.systemTeal)
+        button4.decorate(colors: UIColor.systemPink)
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -113,6 +121,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clearlabel(_ sender: Any) {
+        UIPasteboard.general.string = finallabel.text
+        let alert = UIAlertController(title: "Text Copied", message: "Text Copied", preferredStyle: .alert)
+        let button = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in})
+        alert.addAction(button)
+        self.present(alert, animated: true, completion: nil)
         finallabel.text = ""
         par1 = ""
         par2 = ""
@@ -138,6 +151,14 @@ class ViewController: UIViewController {
         }else{
             model = try! VNCoreMLModel(for: kanji().model)
         }
+    }
+}
+
+extension UIButton{
+    func decorate(colors: UIColor){
+        self.backgroundColor = colors
+        self.layer.cornerRadius = 10 //self.frame.height/2
+        self.setTitleColor(UIColor.black, for: .normal)
     }
 }
 

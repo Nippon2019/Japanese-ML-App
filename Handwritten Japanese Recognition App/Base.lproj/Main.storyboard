@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceK-uM-bbt">
-                                <rect key="frame" x="262" y="271" width="72" height="30"/>
+                                <rect key="frame" x="250" y="250" width="100" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Recognize"/>
                                 <connections>
@@ -45,13 +45,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aWk-Za-f8J" customClass="Handwrite" customModule="Katakana" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="299" width="414" height="414"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aWk-Za-f8J" customClass="Handwrite" customModule="Handwritten_Japanese_Recognition_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="294" width="414" height="414"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HI6-sw-Yp6">
-                                <rect key="frame" x="53" y="271" width="75" height="30"/>
+                                <rect key="frame" x="53" y="250" width="99" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Clear"/>
                                 <connections>
@@ -100,9 +100,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RbQ-oS-kEj">
-                                <rect key="frame" x="168" y="712" width="78" height="30"/>
+                                <rect key="frame" x="117" y="708" width="173" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Clear Label"/>
+                                <state key="normal" title="Copy Text &amp; Clear Label"/>
                                 <connections>
                                     <action selector="clearlabel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wiP-Wa-bwK"/>
                                 </connections>
@@ -115,10 +115,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="button4" destination="RbQ-oS-kEj" id="cU5-xb-3qh"/>
+                        <outlet property="cbutton" destination="HI6-sw-Yp6" id="mui-Dg-Ceg"/>
                         <outlet property="finallabel" destination="GJB-0q-1f7" id="4KX-xF-RFr"/>
                         <outlet property="firstchoice" destination="sKU-ZI-FPt" id="M4I-Xm-Ycl"/>
                         <outlet property="handwrite" destination="aWk-Za-f8J" id="EFH-Wg-fq0"/>
                         <outlet property="modelabel" destination="iwV-rJ-9qe" id="LCR-qK-4Y5"/>
+                        <outlet property="rbutton" destination="ceK-uM-bbt" id="Ncb-M4-QQv"/>
+                        <outlet property="sbutton" destination="Icz-hA-RcS" id="EwO-sl-S7J"/>
                         <outlet property="secondchoice" destination="qAZ-cU-JLE" id="GHs-6G-mtm"/>
                         <outlet property="thirdchoice" destination="KKL-rd-bc9" id="FPS-g3-GoA"/>
                     </connections>
