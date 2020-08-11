@@ -28,15 +28,15 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var sbutton: UIButton!
     @IBOutlet weak var cbutton: UIButton!
-    @IBOutlet weak var rbutton: UIButton!
     @IBOutlet weak var button4: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sbutton.decorate(colors: UIColor.green)
-        cbutton.decorate(colors: UIColor.systemTeal)
-        rbutton.decorate(colors: UIColor.systemTeal)
-        button4.decorate(colors: UIColor.systemPink)
+        sbutton.decorate(colors: UIColor(red: 230.00/255, green: 230.00/255, blue: 230.00/255, alpha: 1.00))
+        cbutton.decorate2(colorA: UIColor.white, colorB: UIColor.blue)
+        button4.decorate(colors: UIColor(red: 230.00/255, green: 230.00/255, blue: 230.00/255, alpha: 1.00))
+        
+        handwrite.delegate = self
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
           return .portrait
        }
     }
-    
+    // disable landscape
     override open var shouldAutorotate: Bool {
         return false
     }
@@ -71,7 +71,7 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func recognizeJapanese(_ sender: Any) {
+    func recognizeJapanese(){
         x = 1
         let request = [VNCoreMLRequest(model: model, completionHandler: Classification)]
         let image = convertImage(image: UIImage(view: handwrite), toSize:CGSize(width:48,height:48))
@@ -84,12 +84,15 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func clear(_ sender: Any) {
+    @IBAction func clear(_ sender: AnyObject? = nil) {
         handwrite.clear()
         par1 = ""
         par2 = ""
         par3 = ""
         x = 0
+        firstchoice.text = ""
+        secondchoice.text = ""
+        thirdchoice.text = ""
     }
     
     @IBAction func chooseA(_ sender: Any) {
@@ -99,6 +102,7 @@ class ViewController: UIViewController {
             par2 = ""
             par3 = ""
             x = 0
+            clear()
         }
     }
     @IBAction func chooseB(_ sender: Any) {
@@ -108,6 +112,7 @@ class ViewController: UIViewController {
             par2 = ""
             par3 = ""
             x = 0
+            clear()
         }
     }
     @IBAction func chooseC(_ sender: Any) {
@@ -117,6 +122,7 @@ class ViewController: UIViewController {
             par2 = ""
             par3 = ""
             x = 0
+            clear()
         }
     }
     
@@ -159,6 +165,14 @@ extension UIButton{
         self.backgroundColor = colors
         self.layer.cornerRadius = 10 //self.frame.height/2
         self.setTitleColor(UIColor.black, for: .normal)
+    }
+    
+    func decorate2(colorA: UIColor, colorB: UIColor){
+        self.backgroundColor = colorA
+        self.layer.borderWidth = 2.0
+        self.layer.borderColor = UIColor.blue.cgColor
+        self.setTitleColor(colorB, for: .normal)
+        self.layer.cornerRadius = 10
     }
 }
 
