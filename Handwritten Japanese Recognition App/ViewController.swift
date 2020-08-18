@@ -23,12 +23,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var bbutton: UIButton!
     
     var model = try! VNCoreMLModel(for: hiragana().model)
-    var x = 0 // changes to 1 while recognition is done
-    var modenum = 0
-    var par = ""
-    var par1 = "" // firstchoice parameter
-    var par2 = "" // secondchoice parameter
-    var par3 = "" // thirdchoice parameter
+    var modenum = 0  // number that represents the character mode
+
+    var x = 0  // changes to 1 while recognition is done
+    var par1 = ""  // firstchoice parameter
+    var par2 = ""  // secondchoice parameter
+    var par3 = ""  // thirdchoice parameter
+    
     var color = UIColor(red: 230.00/255, green: 230.00/255, blue: 230.00/255, alpha: 1.00)
     
     override func viewDidLoad() {
@@ -52,11 +53,9 @@ class ViewController: UIViewController {
     }
     
     func classification(request:VNRequest, error:Error?){
-        guard let result = request.results as? [VNClassificationObservation] else {print("no results"); return}
+        guard let result = request.results as? [VNClassificationObservation] else {print("Error"); return}
+        let results = result.filter({$0.confidence >= 0.005}).map({$0.identifier})
         
-        let results = result
-            .filter({$0.confidence >= 0.005})
-            .map({$0.identifier})
         firstchoice.text = results[0]
         par1 = results[0]
         if (results.count > 1){
@@ -76,12 +75,12 @@ class ViewController: UIViewController {
     func recognizeJapanese(){
         x = 1
         let request = [VNCoreMLRequest(model: model, completionHandler: classification)]
-        let image = convertImage(image: UIImage(view: handwrite), toSize:CGSize(width:48,height:48))
-        let handler = VNImageRequestHandler(cgImage: image.cgImage!, options: [:])
+        let image = convertImage(image: UIImage(view: handwrite), size:CGSize(width:48,height:48))
+        let handler = VNImageRequestHandler(cgImage: image.cgImage!)
         do {
             try handler.perform(request)
         }catch{
-            fatalError("An error has occured.")
+            fatalError("Error")
         }
         
     }
@@ -129,7 +128,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clearlabel(_ sender: Any) {
-        if finallabel.text != ""{
+        if (finallabel.text != ""){
             UIPasteboard.general.string = finallabel.text
             let alert = UIAlertController(title: "Text Copied", message: nil, preferredStyle: .alert)
             let button = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in})
@@ -157,12 +156,21 @@ class ViewController: UIViewController {
             recognizeJapanese()
         }
     }
+    
+    func convertImage(image:UIImage, size:CGSize) -> UIImage{
+        UIGraphicsBeginImageContextWithOptions(size,false, 1.0 )
+        image.draw(in: CGRect(x:0,y:0,width:size.width,height:size.height))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
+    }
+    
 }
 
 extension UIButton{
     func decorate(colors: UIColor){
         self.backgroundColor = colors
-        self.layer.cornerRadius = 10 //self.frame.height/2
+        self.layer.cornerRadius = 10
         self.setTitleColor(UIColor.black, for: .normal)
     }
     
@@ -173,12 +181,4 @@ extension UIButton{
         self.setTitleColor(colorB, for: .normal)
         self.layer.cornerRadius = 10
     }
-}
-
-func convertImage(image:UIImage, toSize size:CGSize) -> UIImage{
-    UIGraphicsBeginImageContextWithOptions(size,false, 1.0 )
-    image.draw(in: CGRect(x:0,y:0,width:size.width,height:size.height))
-    let newImage = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-    return newImage!
 }
