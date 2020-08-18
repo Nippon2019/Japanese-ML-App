@@ -52,13 +52,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKL-rd-bc9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKL-rd-bc9">
                                 <rect key="frame" x="222" y="157.5" width="115" height="115"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAZ-cU-JLE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAZ-cU-JLE">
                                 <rect key="frame" x="89" y="167.5" width="95" height="95"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qAZ-cU-JLE" secondAttribute="height" multiplier="1:1" id="1Rd-Qx-Ofk"/>
@@ -99,7 +99,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKU-ZI-FPt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKU-ZI-FPt">
                                 <rect key="frame" x="159.5" y="87" width="95" height="95"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="sKU-ZI-FPt" secondAttribute="height" multiplier="1:1" id="QIA-MP-nRi"/>
@@ -157,7 +157,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="button4" destination="RbQ-oS-kEj" id="cU5-xb-3qh"/>
+                        <outlet property="bbutton" destination="RbQ-oS-kEj" id="cU5-xb-3qh"/>
                         <outlet property="cbutton" destination="HI6-sw-Yp6" id="mui-Dg-Ceg"/>
                         <outlet property="finallabel" destination="GJB-0q-1f7" id="4KX-xF-RFr"/>
                         <outlet property="firstchoice" destination="sKU-ZI-FPt" id="M4I-Xm-Ycl"/>

@@ -18,23 +18,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var finallabel: UILabel!
     @IBOutlet weak var modelabel: UILabel!
     
-    var model = try! VNCoreMLModel(for: hiragana().model)
-    var x = 0
-    var modenum = 0
-    var par = ""
-    var par1 = ""
-    var par2 = ""
-    var par3 = ""
-    
     @IBOutlet weak var sbutton: UIButton!
     @IBOutlet weak var cbutton: UIButton!
-    @IBOutlet weak var button4: UIButton!
+    @IBOutlet weak var bbutton: UIButton!
+    
+    var model = try! VNCoreMLModel(for: hiragana().model)
+    var modenum = 0  // number that represents the character mode
+
+    var x = 0  // changes to 1 while recognition is done
+    var par1 = ""  // firstchoice parameter
+    var par2 = ""  // secondchoice parameter
+    var par3 = ""  // thirdchoice parameter
+    
+    var color = UIColor(red: 230.00/255, green: 230.00/255, blue: 230.00/255, alpha: 1.00)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sbutton.decorate(colors: UIColor(red: 230.00/255, green: 230.00/255, blue: 230.00/255, alpha: 1.00))
+        
+        sbutton.decorate(colors: color)
         cbutton.decorate2(colorA: UIColor.white, colorB: UIColor.blue)
-        button4.decorate(colors: UIColor(red: 230.00/255, green: 230.00/255, blue: 230.00/255, alpha: 1.00))
+        bbutton.decorate(colors: color)
         
         handwrite.delegate = self
     }
@@ -49,12 +52,10 @@ class ViewController: UIViewController {
         return false
     }
     
-    func Classification(request:VNRequest, error:Error?){
-        guard let result = request.results as? [VNClassificationObservation] else {print("no results"); return}
+    func classification(request:VNRequest, error:Error?){
+        guard let result = request.results as? [VNClassificationObservation] else {print("Error"); return}
+        let results = result.filter({$0.confidence >= 0.005}).map({$0.identifier})
         
-        let results = result
-            .filter({$0.confidence >= 0.005})
-            .map({$0.identifier})
         firstchoice.text = results[0]
         par1 = results[0]
         if (results.count > 1){
@@ -73,13 +74,13 @@ class ViewController: UIViewController {
 
     func recognizeJapanese(){
         x = 1
-        let request = [VNCoreMLRequest(model: model, completionHandler: Classification)]
-        let image = convertImage(image: UIImage(view: handwrite), toSize:CGSize(width:48,height:48))
-        let handler = VNImageRequestHandler(cgImage: image.cgImage!, options: [:])
+        let request = [VNCoreMLRequest(model: model, completionHandler: classification)]
+        let image = convertImage(image: UIImage(view: handwrite), size:CGSize(width:48,height:48))
+        let handler = VNImageRequestHandler(cgImage: image.cgImage!)
         do {
             try handler.perform(request)
         }catch{
-            fatalError("An error has occured.")
+            fatalError("Error")
         }
         
     }
@@ -127,43 +128,49 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clearlabel(_ sender: Any) {
-        UIPasteboard.general.string = finallabel.text
-        let alert = UIAlertController(title: "Text Copied", message: "Text Copied", preferredStyle: .alert)
-        let button = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in})
-        alert.addAction(button)
-        self.present(alert, animated: true, completion: nil)
+        if (finallabel.text != ""){
+            UIPasteboard.general.string = finallabel.text
+            let alert = UIAlertController(title: "Text Copied", message: nil, preferredStyle: .alert)
+            let button = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in})
+            alert.addAction(button)
+            self.present(alert, animated: true, completion: nil)
+        }
         finallabel.text = ""
-        par1 = ""
-        par2 = ""
-        par3 = ""
-        x = 0
     }
     
     @IBAction func switchmode(_ sender: Any) {
         if (modenum == 0){
             modenum = 1
             modelabel.text = "mode: Katakana"
+            model = try! VNCoreMLModel(for: katakana().model)
         }else if (modenum == 1){
             modenum = 2
             modelabel.text = "mode: Kanji"
+            model = try! VNCoreMLModel(for: kanji().model)
         }else{
             modenum = 0
             modelabel.text = "mode: Hiragana"
-        }
-        if (modenum == 0){
             model = try! VNCoreMLModel(for: hiragana().model)
-        }else if (modenum == 1){
-            model = try! VNCoreMLModel(for: katakana().model)
-        }else{
-            model = try! VNCoreMLModel(for: kanji().model)
+        }
+        if (firstchoice.text != ""){
+            recognizeJapanese()
         }
     }
+    
+    func convertImage(image:UIImage, size:CGSize) -> UIImage{
+        UIGraphicsBeginImageContextWithOptions(size,false, 1.0 )
+        image.draw(in: CGRect(x:0,y:0,width:size.width,height:size.height))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
+    }
+    
 }
 
 extension UIButton{
     func decorate(colors: UIColor){
         self.backgroundColor = colors
-        self.layer.cornerRadius = 10 //self.frame.height/2
+        self.layer.cornerRadius = 10
         self.setTitleColor(UIColor.black, for: .normal)
     }
     
@@ -174,12 +181,4 @@ extension UIButton{
         self.setTitleColor(colorB, for: .normal)
         self.layer.cornerRadius = 10
     }
-}
-
-func convertImage(image:UIImage, toSize size:CGSize) -> UIImage{
-    UIGraphicsBeginImageContextWithOptions(size,false, 1.0 )
-    image.draw(in: CGRect(x:0,y:0,width:size.width,height:size.height))
-    let newImage = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-    return newImage!
 }
