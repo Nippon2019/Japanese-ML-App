@@ -117,6 +117,28 @@
                                     <action selector="chooseB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NhA-Tj-mJW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27b-Aj-nZC">
+                                <rect key="frame" x="295" y="39" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1zV-c8-PF3"/>
+                                    <constraint firstAttribute="width" constant="50" id="2UG-p0-etu"/>
+                                </constraints>
+                                <state key="normal" title="English"/>
+                                <connections>
+                                    <action selector="English:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V0C-oR-lUn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OX4-kg-acY">
+                                <rect key="frame" x="357" y="39" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="5pt-vX-QRw"/>
+                                    <constraint firstAttribute="height" constant="30" id="hcm-P0-Xm1"/>
+                                </constraints>
+                                <state key="normal" title="日本語"/>
+                                <connections>
+                                    <action selector="Japanese:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SVx-7b-hxc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -137,14 +159,18 @@
                             <constraint firstItem="RbQ-oS-kEj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Iho-6h-ifC"/>
                             <constraint firstItem="vdr-Xu-yaA" firstAttribute="width" secondItem="kOv-XH-d9d" secondAttribute="width" id="LPn-vn-TvV"/>
                             <constraint firstItem="Icz-hA-RcS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.12" id="Lrs-S9-7zD"/>
+                            <constraint firstItem="OX4-kg-acY" firstAttribute="leading" secondItem="27b-Aj-nZC" secondAttribute="trailing" constant="12" id="Md9-FI-gZ3"/>
                             <constraint firstItem="kOv-XH-d9d" firstAttribute="centerY" secondItem="qAZ-cU-JLE" secondAttribute="centerY" id="Nrv-HN-cno"/>
                             <constraint firstItem="kOv-XH-d9d" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.138" id="Ogi-9t-XFM"/>
+                            <constraint firstItem="27b-Aj-nZC" firstAttribute="centerY" secondItem="iwV-rJ-9qe" secondAttribute="centerY" id="Pie-x2-ded"/>
                             <constraint firstItem="Icz-hA-RcS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="0.3" id="QMW-yZ-CK1"/>
                             <constraint firstItem="AkN-GE-3JD" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.138" id="SLe-gy-Nl3"/>
                             <constraint firstItem="KKL-rd-bc9" firstAttribute="width" secondItem="qAZ-cU-JLE" secondAttribute="width" multiplier="1.20482" id="SVL-tO-Med"/>
                             <constraint firstItem="aWk-Za-f8J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VSo-fC-Q6z"/>
                             <constraint firstItem="HI6-sw-Yp6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X6G-ke-M2B"/>
                             <constraint firstItem="KKL-rd-bc9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1.35" id="Z3p-mI-o2O"/>
+                            <constraint firstItem="OX4-kg-acY" firstAttribute="centerY" secondItem="27b-Aj-nZC" secondAttribute="centerY" id="bRt-ll-xpS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OX4-kg-acY" secondAttribute="trailing" constant="11" id="dcD-lo-yi7"/>
                             <constraint firstItem="vdr-Xu-yaA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1.35" id="e7Q-a1-37b"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GJB-0q-1f7" secondAttribute="bottom" id="md1-hy-6M9"/>
                             <constraint firstItem="aWk-Za-f8J" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="qr5-7Z-YmE"/>

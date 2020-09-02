@@ -24,11 +24,14 @@ class ViewController: UIViewController {
     
     var model = try! VNCoreMLModel(for: hiragana().model)
     var modenum = 0  // number that represents the character mode
+    var langnum = 0 //number that represents the language mode
 
     var x = 0  // changes to 1 while recognition is done
     var par1 = ""  // firstchoice parameter
     var par2 = ""  // secondchoice parameter
     var par3 = ""  // thirdchoice parameter
+    var text1 = "Text Copied"
+    var text2 = "OK"
     
     var color = UIColor(red: 230.00/255, green: 230.00/255, blue: 230.00/255, alpha: 1.00)
     
@@ -129,9 +132,16 @@ class ViewController: UIViewController {
     
     @IBAction func clearlabel(_ sender: Any) {
         if (finallabel.text != ""){
+            if langnum == 0 && text1 != "Text Copied"{
+                text1 = "Text Copied"
+                text2 = "OK"
+            }else if langnum == 1 && text1 == "Text Copied"{
+                text1 = "テキストをコピー"
+                text2 = "了解"
+            }
             UIPasteboard.general.string = finallabel.text
-            let alert = UIAlertController(title: "Text Copied", message: nil, preferredStyle: .alert)
-            let button = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in})
+            let alert = UIAlertController(title: text1, message: nil, preferredStyle: .alert)
+            let button = UIAlertAction(title: text2, style: .default, handler: { (action) -> Void in})
             alert.addAction(button)
             self.present(alert, animated: true, completion: nil)
         }
@@ -141,19 +151,45 @@ class ViewController: UIViewController {
     @IBAction func switchmode(_ sender: Any) {
         if (modenum == 0){
             modenum = 1
-            modelabel.text = "mode: Katakana"
+            if langnum == 0{modelabel.text = "mode: Katakana"}
+            if langnum == 1{modelabel.text = "カタカナ"}
             model = try! VNCoreMLModel(for: katakana().model)
         }else if (modenum == 1){
             modenum = 2
-            modelabel.text = "mode: Kanji"
+            if langnum == 0{modelabel.text = "mode: Kanji"}
+            if langnum == 1{modelabel.text = "漢字"}
             model = try! VNCoreMLModel(for: kanji().model)
         }else{
             modenum = 0
-            modelabel.text = "mode: Hiragana"
+            if langnum == 0{modelabel.text = "mode: Hiragana"}
+            if langnum == 1{modelabel.text = "ひらがな"}
             model = try! VNCoreMLModel(for: hiragana().model)
         }
         if (firstchoice.text != ""){
             recognizeJapanese()
+        }
+    }
+    
+    @IBAction func English(_ sender: Any) {
+        if langnum != 0{
+            sbutton.setTitle("switch mode", for: .normal)
+            cbutton.setTitle("Clear", for: .normal)
+            bbutton.setTitle("copy text & clear label", for: .normal)
+            if modenum == 0{modelabel.text = "mode: Hiragana"}
+            if modenum == 1{modelabel.text = "mode: Katakana"}
+            if modenum == 2{modelabel.text = "mode: Kanji"}
+            langnum = 0
+        }
+    }
+    @IBAction func Japanese(_ sender: Any) {
+        if langnum != 1{
+            sbutton.setTitle("モード変更", for: .normal)
+            cbutton.setTitle("クリア", for: .normal)
+            bbutton.setTitle("テキストのコピーとクリア", for: .normal)
+            if modenum == 0{modelabel.text = "ひらがな"}
+            if modenum == 1{modelabel.text = "カタカナ"}
+            if modenum == 2{modelabel.text = "漢字"}
+            langnum = 1
         }
     }
     
