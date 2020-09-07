@@ -5,6 +5,7 @@
 //  Created by Aiyu Kamate on 2020/08/03.
 //  Copyright © 2020 Aiyu Kamate. All rights reserved.
 //
+//  Icon from icons8.com
 
 import UIKit
 import Vision
