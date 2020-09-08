@@ -175,7 +175,7 @@ class ViewController: UIViewController {
         if langnum != 0{
             sbutton.setTitle("switch mode", for: .normal)
             cbutton.setTitle("Clear", for: .normal)
-            bbutton.setTitle("copy text & clear label", for: .normal)
+            bbutton.setTitle("copy & clear text", for: .normal)
             if modenum == 0{modelabel.text = "mode: Hiragana"}
             if modenum == 1{modelabel.text = "mode: Katakana"}
             if modenum == 2{modelabel.text = "mode: Kanji"}
